@@ -32,7 +32,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'mini_racer'
 
 group :production do
-  gem 'pg', '~> 0.21' # for Heroku deployment
+  gem 'pg'
   gem 'rails_12factor'
 end
 
