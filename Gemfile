@@ -17,6 +17,12 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 
+gem 'sprockets-rails', :require => 'sprockets/railtie'
+
+gem 'bootstrap', '~> 4.6.0'
+
+gem 'jquery-rails'
+
 gem 'rexml'
 
 gem 'devise'
