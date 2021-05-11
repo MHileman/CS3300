@@ -1,29 +1,56 @@
-<p id="notice"><%= notice %></p>
+<main role="main">
+  <section class="jumbotron text-center" background: url(<%= asset_path 'mountains.jpg' %>>
+    <div class="container">
+      <p class="lead text-light">Hello, my name is</p>
+      <h1 class="jumbotron-heading text-white">MATTHEW HILEMAN</h1>
+      <p class="lead text-light"><small>Software Developer and Graphic Designer</small></p>
+      <p>
+        <a href="#" class="btn btn-primary my-2">Contact Me</a>
+      </p>
+    </div>
+  </section>
 
-<h1>Projects</h1>
+  <p id="notice"><%= notice %></p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <div class="album py-5 bg-light">
+    <h2 class="jumbotron-heading text-center">My Projects</h2>
+    <div class="container">
+      <div class="row">
 
-<br>
+        <% @projects.each do |project| %>
+          <div class="col-sm-12 col-lg-4 mt-4">
+            <div class="card box-shadow h-100 mb-4">
+              <img class="card-img-top bg-dark" src="..." alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title text-center"><%= project.title %></h5>
+                <p class="card-text text-center"><%= project.description %></p>
+              </div>
+              <div class="card-footer">
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted">Last updated today.</small>
+                  <div class="btn-group">
+                    <%= link_to 'View', project, :class => 'btn btn-sm btn-outline-secondary' %>
+                    <% if user_signed_in? %>
+                      <%= link_to 'Edit', edit_project_path(project), :class => 'btn btn-sm btn-outline-secondary' %>
+                      <%= button_to 'Delete', project, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-sm btn-outline-danger' %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
 
-<%= link_to 'New Project', new_project_path %>
+        <div class="col-sm-12 col-lg-4 mt-4">
+          <div class="card box-shadow h-100 mb-4">
+            <div class="card-body">
+              <h4 class="card-title text-center"><%= link_to 'New Project', new_project_path %></h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>

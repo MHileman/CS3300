@@ -14,9 +14,10 @@ import { definitionsFromContext } from "stimulus/webpack-helpers"
 import "bootstrap"
 import "../stylesheets/application"
 
-//= require jquery3
+//= require jquery
 //= require popper
 //= require bootstrap-sprockets
+//= require jquery_ujs
 
 Rails.start()
 Turbolinks.start()
