@@ -23,10 +23,15 @@
   padding-bottom: var(--jumbotron-padding-y);
   margin-bottom: 0;
   background-color: #fff;
+
+}
+
+.bckgnd {
   background-image: image-url('river.jpg');
   background-repeat: no-repeat;
   background-size: 100%;
 }
+
 @media (min-width: 768px) {
   .jumbotron {
     padding-top: calc(var(--jumbotron-padding-y) * 2);

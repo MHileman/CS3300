@@ -1,5 +1,5 @@
 <main role="main">
-  <section class="jumbotron text-center" background: url(<%= asset_path 'mountains.jpg' %>>
+  <section class="jumbotron bckgnd text-center">
     <div class="container">
       <p class="lead text-light">Hello, my name is</p>
       <h1 class="jumbotron-heading text-white">MATTHEW HILEMAN</h1>
@@ -41,7 +41,7 @@
             </div>
           </div>
         <% end %>
-
+        <% if user_signed_in? %>
         <div class="col-sm-12 col-lg-4 mt-4">
           <div class="card box-shadow h-100 mb-4">
             <div class="card-body">
@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-
+        <% end %>
       </div>
     </div>
   </div>
